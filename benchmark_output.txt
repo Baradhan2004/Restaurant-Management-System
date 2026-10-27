@@ -1,0 +1,19 @@
+Seeded in 10.2s (triggers fired on every insert): {'orders': 50000, 'order_items': 200413, 'payments': 50000, 'customers': 5000, 'menu_items': 36}
+Built 8 indexes in 259 ms
+
+query                              no index    indexed   speedup
+order lookup by id's items            7.33ms     0.004ms     2058x
+    plan before: SCAN order_items
+    plan after : SEARCH order_items USING INDEX idx_order_items_order (order_id=?)
+customer order history                2.90ms     0.004ms      687x
+    plan before: SCAN o | SEARCH p USING INDEX sqlite_autoindex_payments_1 (order_id=?)
+    plan after : SEARCH o USING COVERING INDEX idx_orders_customer (customer_id=?) | SEARCH p USING INDEX sqlite_autoindex_payments_1 (order_id=?)
+one day's orders                      3.55ms     0.006ms      563x
+    plan before: SCAN orders
+    plan after : SEARCH orders USING COVERING INDEX idx_orders_opened_at (opened_at>? AND opened_at<?)
+revenue for June                      4.19ms     1.650ms        3x
+    plan before: SCAN payments
+    plan after : SEARCH payments USING INDEX idx_payments_paid_at (paid_at>? AND paid_at<?)
+item sales rollup                     8.60ms     2.308ms        4x
+    plan before: SCAN order_items
+    plan after : SEARCH order_items USING INDEX idx_order_items_item (item_id=?)

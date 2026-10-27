@@ -1,0 +1,39 @@
+
+== top_items_per_category  (18 rows, 130 ms)
+   {'category': 'Beverages', 'item': 'Cold Coffee', 'units': 9314, 'revenue': 1117680.0, 'rnk': 1}
+   {'category': 'Beverages', 'item': 'Mango Lassi', 'units': 9412, 'revenue': 894140.0, 'rnk': 2}
+   {'category': 'Beverages', 'item': 'Fresh Lime Soda', 'units': 9235, 'revenue': 646450.0, 'rnk': 3}
+   {'category': 'Biryani & Rice', 'item': 'Mutton Biryani', 'units': 9239, 'revenue': 3880380.0, 'rnk': 1}
+   {'category': 'Biryani & Rice', 'item': 'Chicken Biryani', 'units': 9063, 'revenue': 2900160.0, 'rnk': 2}
+   {'category': 'Biryani & Rice', 'item': 'Veg Biryani', 'units': 9187, 'revenue': 2388620.0, 'rnk': 3}
+
+== rolling_7day_revenue  (5 rows, 48 ms)
+   {'day': '2026-01-01', 'revenue': 1034.25, 'ma7': 130627.5}
+   {'day': '2025-12-31', 'revenue': 118928.25, 'ma7': 154020.75}
+   {'day': '2025-12-30', 'revenue': 155589.0, 'ma7': 159621.0}
+   {'day': '2025-12-29', 'revenue': 139104.0, 'ma7': 158646.0}
+   {'day': '2025-12-28', 'revenue': 172662.0, 'ma7': 160378.5}
+
+== peak_hours  (5 rows, 29 ms)
+   {'hour': 20, 'orders': 9593}
+   {'hour': 19, 'orders': 7449}
+   {'hour': 13, 'orders': 7270}
+   {'hour': 21, 'orders': 6697}
+   {'hour': 14, 'orders': 5161}
+
+== customer_rfm  (5 rows, 58 ms)
+   {'customer_id': 3794, 'recency_days': 6, 'frequency': 18, 'monetary': 21782.25, 'r': 4, 'f': 4, 'm': 4}
+   {'customer_id': 659, 'recency_days': 9, 'frequency': 15, 'monetary': 21026.25, 'r': 4, 'f': 4, 'm': 4}
+   {'customer_id': 4775, 'recency_days': 25, 'frequency': 10, 'monetary': 20879.25, 'r': 3, 'f': 4, 'm': 4}
+   {'customer_id': 3510, 'recency_days': 31, 'frequency': 10, 'monetary': 20217.75, 'r': 3, 'f': 4, 'm': 4}
+   {'customer_id': 2049, 'recency_days': 4, 'frequency': 16, 'monetary': 19377.75, 'r': 4, 'f': 4, 'm': 4}
+
+== staff_sales_leaderboard  (5 rows, 51 ms)
+   {'full_name': 'Staff 12', 'role': 'waiter', 'orders': 5674, 'sales': 6726704.25, 'tips': 242154.69}
+   {'full_name': 'Staff 9', 'role': 'waiter', 'orders': 5666, 'sales': 6593574.75, 'tips': 248594.26}
+   {'full_name': 'Staff 13', 'role': 'waiter', 'orders': 5562, 'sales': 6580659.75, 'tips': 240444.04}
+   {'full_name': 'Staff 14', 'role': 'waiter', 'orders': 5599, 'sales': 6580166.25, 'tips': 239590.16}
+   {'full_name': 'Staff 11', 'role': 'waiter', 'orders': 5520, 'sales': 6544188.0, 'tips': 250893.07}
+
+Low-stock ingredients: 0
+Revenue: 58699851.0
